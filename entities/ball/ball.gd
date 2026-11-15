@@ -15,17 +15,20 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	# Rebondit si un obstacl est rencontré
-	var paddle := collision.get_collider() as Paddle
+	var obstacle := collision.get_collider()
 	
 	# Rebond différent si il s'agit du paddle
-	if paddle:
+	if obstacle is Paddle:
 		# Convertit la position global de la collision en un point entre -1 et 1
 		# 	-1 : le point le plus à gauche du paddle
 		# 	 1 : le point le plus à droite du paddle
-		var offset := (collision.get_position().x - paddle.global_position.x) / paddle.get_half_width()
+		var offset :float = (collision.get_position().x - obstacle.global_position.x) / obstacle.get_half_width()
 		offset = clamp(offset, -1.0, 1.0)
 		
 		var angle :float   = deg_to_rad(offset * MAX_BOUNCE_ANGLE)
 		velocity = Vector2.UP.rotated(angle) * velocity.length()
+	elif obstacle is Brick:
+		obstacle.hit()
+		velocity = velocity.bounce(collision.get_normal())
 	else:
 		velocity = velocity.bounce(collision.get_normal())
