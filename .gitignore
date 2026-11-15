@@ -1,0 +1,11 @@
+# Godot 4+ specific ignores
+.godot/
+builds/
+*.exe
+*.apk
+*.aab
+*.pck
+*.zip
+.DS_Store
+Thumbs.db
+*temp*

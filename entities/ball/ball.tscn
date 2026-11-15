@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cf33w34kirdlq"]
+
+[ext_resource type="Texture2D" uid="uid://byat5mw8vdkou" path="res://shared/sprites/paddles_and_balls.png" id="1_hvtcl"]
+[ext_resource type="Script" uid="uid://hjv7x2rmv4fe" path="res://entities/ball/ball.gd" id="1_jyt08"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_evcbc"]
+radius = 4.0
+
+[node name="Ball" type="CharacterBody2D" unique_id=1760370203]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_jyt08")
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1678264075]
+shape = SubResource("CircleShape2D_evcbc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1592168577]
+texture = ExtResource("1_hvtcl")
+region_enabled = true
+region_rect = Rect2(144, 72, 8, 8)
