@@ -8,6 +8,7 @@ size = Vector2(32, 9)
 
 [node name="Paddle" type="CharacterBody2D" unique_id=2079930845]
 scale = Vector2(1.5, 1.5)
+collision_layer = 2
 script = ExtResource("1_frr1j")
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1972520235]
