@@ -5,6 +5,7 @@ extends Node2D
 const TOP_MARGIN := 50.0
 
 func _ready() -> void:
+	# Crée le niveau et en vérifiant les erreurs
 	if not level.validate_level():
 		print("Une erreur à été détecté dans le niveau.")
 		return
@@ -19,6 +20,9 @@ func _ready() -> void:
 	
 	# Fait apparaitre une balle
 	_respawn_ball()
+	
+	# Ecoute si le niveau est terminé ou non
+	$Bricks.level_cleared.connect(_on_level_cleared)
 
 func _respawn_ball() -> void:
 	var paddle_pos: Vector2 = $Arena/Paddle.global_position
@@ -35,3 +39,8 @@ func _on_deadzone_body_entered(body: Node2D) -> void:
 		_respawn_ball()
 	else:
 		$CanvasLayer/GameOver.visible = true
+		get_tree().paused = true
+
+func _on_level_cleared() -> void:
+	$CanvasLayer/Victory.visible = true
+	get_tree().paused = true

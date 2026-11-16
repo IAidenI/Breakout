@@ -52,10 +52,12 @@ res://
 - [X] Zone de mort + vies
 - [ ] Score + HUD
 - [ ] Victoire / défaite
-- [ ] Briques à plusieurs PV, niveaux supplémentaires
 - [ ] Power-ups
-- [ ] Menu de sélection de niveau
+- [ ] Menu de sélection de niveau/Niveaux supplémentaires
 - [ ] Sons, particules, screen shake
+- [ ] Check les private (fonctions, variables)
+- [ ] Améliorer l'ui
+- [ ] Commenter
 
 ## Lancer le projet
 

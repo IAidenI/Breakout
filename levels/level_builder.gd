@@ -1,7 +1,10 @@
 class_name LevelBuilder
 extends Node2D
 
+signal level_cleared()
+
 @export var brick_scene :PackedScene
+var remaining :int = 0
 
 ## Parcourt le layout et construit le niveau
 func build(data: LevelData) -> Vector2:
@@ -31,3 +34,11 @@ func spawn_brick(type: Brick.Type, top_left: Vector2) -> void:
 	brick.type = type
 	brick.position = top_left + Brick.get_size_for(type) / 2
 	add_child(brick)
+	
+	brick.destroyed.connect(_on_brick_destroyed)
+	remaining += 1
+
+func _on_brick_destroyed() -> void:
+	remaining -= 1
+	if remaining <= 0:
+		level_cleared.emit()

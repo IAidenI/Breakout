@@ -2,12 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://kgnuerqbsbmh" path="res://arena/arena.tscn" id="1_53q0u"]
 [ext_resource type="Script" uid="uid://jf78vhuwxxxg" path="res://main/main.gd" id="1_pjrb6"]
-[ext_resource type="Resource" uid="uid://d1t83raei1hp" path="res://levels/level_01.tres" id="2_xwkvk"]
+[ext_resource type="Resource" uid="uid://bx3b424uwppwf" path="res://levels/level_02.tres" id="2_67ri8"]
 [ext_resource type="PackedScene" uid="uid://bt0dk0t3wdskm" path="res://entities/brick/brick.tscn" id="3_c651c"]
 [ext_resource type="Script" uid="uid://dqt854ce2uqjo" path="res://levels/level_builder.gd" id="5_3wy1v"]
 [ext_resource type="Texture2D" uid="uid://calwstwj7q0c6" path="res://main/Backround_Tiles.png" id="6_kfbq2"]
 [ext_resource type="PackedScene" uid="uid://b7x4ev550oke6" path="res://ui/hud/hud.tscn" id="7_4dugh"]
 [ext_resource type="PackedScene" uid="uid://cofmc56tb7mtx" path="res://ui/menus/game_over/game_over.tscn" id="8_67ri8"]
+[ext_resource type="PackedScene" uid="uid://cofmc56tb7mtx" path="res://ui/menus/victory/victory.tscn" id="9_grrlh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dugh"]
 texture = ExtResource("6_kfbq2")
@@ -27,7 +28,7 @@ sources/0 = SubResource("TileSetAtlasSource_4dugh")
 
 [node name="Main" type="Node2D" unique_id=2023419297]
 script = ExtResource("1_pjrb6")
-level = ExtResource("2_xwkvk")
+level = ExtResource("2_67ri8")
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=751900887]
 position = Vector2(0, -24)
@@ -47,4 +48,7 @@ brick_scene = ExtResource("3_c651c")
 [node name="Hud" parent="CanvasLayer" unique_id=812766956 instance=ExtResource("7_4dugh")]
 
 [node name="GameOver" parent="CanvasLayer" unique_id=1088216974 instance=ExtResource("8_67ri8")]
+visible = false
+
+[node name="Victory" parent="CanvasLayer" unique_id=1886279855 instance=ExtResource("9_grrlh")]
 visible = false
