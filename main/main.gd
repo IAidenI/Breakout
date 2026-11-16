@@ -28,6 +28,7 @@ func _on_deadzone_body_entered(body: Node2D) -> void:
 	if body is not Ball:
 		return
 	
+	# Supprime une vie si la deadzone est atteinte par la balle
 	PlayerState.lives -= 1
 	if PlayerState.lives > 0:
 		print("Vies restante : ", PlayerState.lives)

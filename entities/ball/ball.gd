@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const LAUNCH_ANGLE := 10.0
 
-const SPEED :float = 200.0
+const SPEED :float = 250.0
 const MAX_BOUNCE_ANGLE :float = 60.0
 
 func _launch() -> void:
