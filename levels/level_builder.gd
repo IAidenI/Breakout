@@ -1,0 +1,29 @@
+class_name LevelBuilder
+extends Node2D
+
+@export var brick_scene :PackedScene
+
+## Parcourt le layout et construit le niveau dans $Bricks
+func build(data: LevelData) -> void:
+	var cursor    :Vector2 = Vector2.ZERO
+	var cell_size :Vector2 = data.get_cell_size()
+	
+	for row in data.layout:
+		for cell in row:
+			var type :int = data.char_to_brick_type(cell)
+
+			# Si il s'agit d'une brique
+			if type != -1:
+				spawn_brick(type, cursor)
+				cursor.x += Brick.get_size_for(type).x
+			else: # Si il s'agit d'un bloc vide
+				cursor.x += cell_size.x
+		cursor.x = 0
+		cursor.y += data.get_cell_size().y
+
+## Crée une brique d'un type donné, son coin haut-gauche à la position donnée
+func spawn_brick(type: Brick.Type, top_left: Vector2) -> void:
+	var brick :Brick = brick_scene.instantiate()
+	brick.type = type
+	brick.position = top_left + Brick.get_size_for(type) / 2
+	add_child(brick)

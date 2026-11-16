@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b50esatj28uku"]
+
+[ext_resource type="PackedScene" uid="uid://kgnuerqbsbmh" path="res://arena/arena.tscn" id="1_53q0u"]
+[ext_resource type="Script" uid="uid://jf78vhuwxxxg" path="res://main/main.gd" id="1_pjrb6"]
+[ext_resource type="Resource" uid="uid://d1t83raei1hp" path="res://levels/level_01.tres" id="2_xwkvk"]
+[ext_resource type="PackedScene" uid="uid://bt0dk0t3wdskm" path="res://entities/brick/brick.tscn" id="3_c651c"]
+
+[node name="Main" type="Node2D" unique_id=2023419297]
+script = ExtResource("1_pjrb6")
+level = ExtResource("2_xwkvk")
+brick_scene = ExtResource("3_c651c")
+
+[node name="Arena" parent="." unique_id=1997608320 instance=ExtResource("1_53q0u")]
+
+[node name="Bricks" type="Node2D" parent="." unique_id=1639393876]
+position = Vector2(50, 50)
+scale = Vector2(2, 2)
