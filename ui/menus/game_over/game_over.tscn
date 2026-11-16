@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cofmc56tb7mtx"]
+
+[node name="GameOver" type="Control" unique_id=1088216974]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1774944282]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1065453094]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="End" type="Label" parent="CenterContainer" unique_id=2146941564]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "GAME OVER"

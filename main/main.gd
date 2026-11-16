@@ -34,4 +34,4 @@ func _on_deadzone_body_entered(body: Node2D) -> void:
 		print("Vies restante : ", PlayerState.lives)
 		_respawn_ball()
 	else:
-		print("Game Over")
+		$CanvasLayer/GameOver.visible = true

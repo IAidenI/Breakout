@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dqt854ce2uqjo" path="res://levels/level_builder.gd" id="5_3wy1v"]
 [ext_resource type="Texture2D" uid="uid://calwstwj7q0c6" path="res://main/Backround_Tiles.png" id="6_kfbq2"]
 [ext_resource type="PackedScene" uid="uid://b7x4ev550oke6" path="res://ui/hud/hud.tscn" id="7_4dugh"]
+[ext_resource type="PackedScene" uid="uid://cofmc56tb7mtx" path="res://ui/menus/game_over/game_over.tscn" id="8_67ri8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dugh"]
 texture = ExtResource("6_kfbq2")
@@ -41,4 +42,9 @@ scale = Vector2(2, 2)
 script = ExtResource("5_3wy1v")
 brick_scene = ExtResource("3_c651c")
 
-[node name="Hud" parent="." unique_id=812766956 instance=ExtResource("7_4dugh")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2023204843]
+
+[node name="Hud" parent="CanvasLayer" unique_id=812766956 instance=ExtResource("7_4dugh")]
+
+[node name="GameOver" parent="CanvasLayer" unique_id=1088216974 instance=ExtResource("8_67ri8")]
+visible = false
