@@ -51,7 +51,7 @@ res://
 - [X] Premier niveau
 - [X] Zone de mort + vies
 - [ ] Score + HUD
-- [ ] Victoire / défaite
+- [X] Victoire / défaite
 - [ ] Power-ups
 - [ ] Menu de sélection de niveau/Niveaux supplémentaires
 - [ ] Sons, particules, screen shake
