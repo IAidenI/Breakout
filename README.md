@@ -49,7 +49,7 @@ res://
 - [x] Balle (rebond selon la position sur le paddle)
 - [X] Briques
 - [X] Premier niveau
-- [ ] Zone de mort + vies
+- [X] Zone de mort + vies
 - [ ] Score + HUD
 - [ ] Victoire / défaite
 - [ ] Briques à plusieurs PV, niveaux supplémentaires
