@@ -13,7 +13,7 @@ level = ExtResource("2_xwkvk")
 [node name="Arena" parent="." unique_id=1997608320 instance=ExtResource("1_53q0u")]
 
 [node name="Bricks" type="Node2D" parent="." unique_id=1639393876]
-position = Vector2(50, 50)
+position = Vector2(576, 159)
 scale = Vector2(2, 2)
 script = ExtResource("5_3wy1v")
 brick_scene = ExtResource("3_c651c")

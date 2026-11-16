@@ -3,10 +3,11 @@ extends Node2D
 
 @export var brick_scene :PackedScene
 
-## Parcourt le layout et construit le niveau dans $Bricks
-func build(data: LevelData) -> void:
-	var cursor    :Vector2 = Vector2.ZERO
-	var cell_size :Vector2 = data.get_cell_size()
+## Parcourt le layout et construit le niveau
+func build(data: LevelData) -> Vector2:
+	var cursor     :Vector2 = Vector2.ZERO
+	var cell_size  :Vector2 = data.get_cell_size()
+	var level_size :Vector2 = Vector2.ZERO
 	
 	for row in data.layout:
 		for cell in row:
@@ -18,8 +19,11 @@ func build(data: LevelData) -> void:
 				cursor.x += Brick.get_size_for(type).x
 			else: # Si il s'agit d'un bloc vide
 				cursor.x += cell_size.x
+		level_size.x = max(level_size.x, cursor.x)
 		cursor.x = 0
-		cursor.y += data.get_cell_size().y
+		cursor.y += cell_size.y
+	level_size.y = cursor.y
+	return level_size
 
 ## Crée une brique d'un type donné, son coin haut-gauche à la position donnée
 func spawn_brick(type: Brick.Type, top_left: Vector2) -> void:
