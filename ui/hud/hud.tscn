@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b7x4ev550oke6"]
+
+[ext_resource type="Script" uid="uid://br7rkv37e0o74" path="res://ui/hud/hud.gd" id="1_e0nub"]
+[ext_resource type="Texture2D" uid="uid://dkvrskihyc217" path="res://ui/hud/heart_full.tres" id="1_xmswo"]
+[ext_resource type="Texture2D" uid="uid://cksybrmev6b5b" path="res://ui/hud/heart_empty.tres" id="3_e0nub"]
+
+[node name="Hud" type="Control" unique_id=812766956]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e0nub")
+heart_full = ExtResource("1_xmswo")
+heart_empty = ExtResource("3_e0nub")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1607725266]
+layout_mode = 0
+offset_right = 41.0
+offset_bottom = 10.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Hearts" type="HBoxContainer" parent="MarginContainer" unique_id=253644757]
+layout_mode = 2
