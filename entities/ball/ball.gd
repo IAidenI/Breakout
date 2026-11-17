@@ -8,6 +8,7 @@ const MAX_BOUNCE_ANGLE :float = 60.0
 
 func _launch() -> void:
 	var angle := randf_range(-LAUNCH_ANGLE, LAUNCH_ANGLE)
+	angle = 0
 	velocity = Vector2.UP.rotated(deg_to_rad(angle)) * SPEED
 
 func respawn(spawn_position: Vector2) -> void:

@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_xsp1e")
-layout = Array[String](["......X......", ".....XXX.....", "....XXXXX....", "...XXX.XXX...", "..XXX...XXX..", ".XXXXXXXXXXX.", "XXXXXXXXXXXXX"])
+layout = Array[String](["XXXXXXXXX", "X.X.X.X.X", "XXXXXXXXX"])
 metadata/_custom_type_script = "uid://hkscrh67h4t0"

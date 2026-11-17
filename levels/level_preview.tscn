@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqt854ce2uqjo" path="res://levels/level_builder.gd" id="1_aglir"]
 [ext_resource type="Script" uid="uid://dahh23dtbgxcj" path="res://levels/level_preview.gd" id="1_e2wux"]
-[ext_resource type="Resource" uid="uid://d1t83raei1hp" path="res://levels/maps/level_01.tres" id="2_d4p3g"]
+[ext_resource type="Resource" uid="uid://c71tasnnqh2rx" path="res://levels/maps/level_05.tres" id="2_d4p3g"]
 [ext_resource type="PackedScene" uid="uid://bt0dk0t3wdskm" path="res://entities/brick/brick.tscn" id="2_e2wux"]
 [ext_resource type="PackedScene" uid="uid://kgnuerqbsbmh" path="res://arena/arena.tscn" id="5_d4p3g"]
 
@@ -11,7 +11,7 @@ script = ExtResource("1_e2wux")
 level = ExtResource("2_d4p3g")
 
 [node name="Bricks" type="Node2D" parent="." unique_id=2099962488]
-position = Vector2(156, 50)
+position = Vector2(192, 50)
 scale = Vector2(2, 2)
 script = ExtResource("1_aglir")
 brick_scene = ExtResource("2_e2wux")

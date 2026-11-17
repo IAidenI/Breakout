@@ -17,11 +17,13 @@ func validate_level() -> bool:
 		for cell in row:
 			# Vérifie si il ne s'agit pas d'un caractère invalide
 			if cell not in LevelData.VALIDATE_CHAR:
+				print("Erreur sur : ", cell)
 				return false
 			
 			# Vérifie si le bon type de brique à été utilisé
 			if type == LevelData.Type.NORMAL:
 				if cell == LevelData.SQUARE_ID:
+					print("Erreur sur : ", cell)
 					return false
 	return true
 

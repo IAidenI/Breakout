@@ -53,7 +53,7 @@ res://
 - [ ] Score + HUD
 - [X] Victoire / défaite
 - [ ] Power-ups
-- [ ] Menu de sélection de niveau/Niveaux supplémentaires
+- [X] Menu de sélection de niveau/Niveaux supplémentaires
 - [ ] Sons, particules, screen shake
 - [ ] Check les private (fonctions, variables)
 - [ ] Améliorer l'ui

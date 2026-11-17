@@ -2,7 +2,7 @@
 class_name Brick
 extends StaticBody2D
 
-signal destroyed()
+signal destroyed
 
 enum Type { FLAT, WIDE, SQUARE }
 @export var type :Type:

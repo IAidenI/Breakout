@@ -2,7 +2,7 @@
 class_name LevelBuilder
 extends Node2D
 
-signal level_cleared()
+signal level_cleared
 
 @export var brick_scene :PackedScene
 var remaining :int = 0
