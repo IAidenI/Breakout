@@ -13,6 +13,7 @@ script = ExtResource("1_frr1j")
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1972520235]
 shape = SubResource("RectangleShape2D_d472v")
+one_way_collision = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1392203603]
 texture = ExtResource("1_d472v")
