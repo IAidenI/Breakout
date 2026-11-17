@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://l1fd045twtp5"]
+
+[ext_resource type="Script" uid="uid://ditc1ri1j4602" path="res://ui/menus/overlays/pause/pause.gd" id="1_fgql8"]
+
+[node name="Pause" type="Control" unique_id=1836645974]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fgql8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2017020669]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="CenterContainer2" type="CenterContainer" parent="." unique_id=871232462]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 261.0
+offset_right = 691.0
+offset_bottom = 386.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2" unique_id=1914568130]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CenterContainer2/VBoxContainer" unique_id=1940018539]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "PAUSE"
+
+[node name="Resume" type="Button" parent="CenterContainer2/VBoxContainer" unique_id=2123039697]
+layout_mode = 2
+text = "RESUME"
+
+[node name="Exit" type="Button" parent="CenterContainer2/VBoxContainer" unique_id=1773908344]
+layout_mode = 2
+text = "EXIT"
+
+[connection signal="pressed" from="CenterContainer2/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CenterContainer2/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

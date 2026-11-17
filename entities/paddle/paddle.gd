@@ -1,7 +1,7 @@
 class_name Paddle
 extends CharacterBody2D
 
-const SPEED = 200.0
+const SPEED = 300.0
 
 func _ready() -> void:
 	position.x = get_viewport_rect().size.x / 2

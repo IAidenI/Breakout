@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b7x4ev550oke6" path="res://ui/hud/hud.tscn" id="7_frwyw"]
 [ext_resource type="PackedScene" uid="uid://cofmc56tb7mtx" path="res://ui/menus/overlays/game_over/game_over.tscn" id="8_yyxey"]
 [ext_resource type="PackedScene" uid="uid://hcu78plsyfs0" path="res://ui/menus/overlays/victory/victory.tscn" id="9_tv0fx"]
+[ext_resource type="PackedScene" uid="uid://l1fd045twtp5" path="res://ui/menus/overlays/pause/pause.tscn" id="10_j8tme"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dugh"]
 texture = ExtResource("3_dp3pf")
@@ -51,4 +52,7 @@ brick_scene = ExtResource("6_g6fv7")
 visible = false
 
 [node name="Victory" parent="CanvasLayer" unique_id=1337380553 instance=ExtResource("9_tv0fx")]
+visible = false
+
+[node name="Pause" parent="CanvasLayer" unique_id=1836645974 instance=ExtResource("10_j8tme")]
 visible = false
