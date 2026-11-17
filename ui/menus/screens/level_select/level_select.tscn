@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://2js2k8im705i" path="res://ui/menus/screens/level_select/level_select.gd" id="1_tig41"]
 [ext_resource type="PackedScene" uid="uid://gn27g03du1hc" path="res://ui/components/level_card/level_card.tscn" id="2_c5c28"]
 [ext_resource type="Resource" uid="uid://bx3b424uwppwf" path="res://levels/maps/level_02.tres" id="3_dde8m"]
-[ext_resource type="Resource" uid="uid://ce6ers6tti5if" path="res://levels/maps/test.tres" id="3_sdj5t"]
+[ext_resource type="Resource" uid="uid://d1t83raei1hp" path="res://levels/maps/level_01.tres" id="3_nk3qv"]
 [ext_resource type="Resource" uid="uid://c2eakgjcbq5bi" path="res://levels/maps/level_03.tres" id="5_sdj5t"]
 [ext_resource type="Resource" uid="uid://bysqmey127508" path="res://levels/maps/level_04.tres" id="6_xurs4"]
 [ext_resource type="Resource" uid="uid://c71tasnnqh2rx" path="res://levels/maps/level_05.tres" id="7_8wpn5"]
@@ -50,7 +50,7 @@ theme_override_constants/separation = 10
 [node name="Level_01" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=413862430 instance=ExtResource("2_c5c28")]
 layout_mode = 2
 title = "Level 1"
-level = ExtResource("3_sdj5t")
+level = ExtResource("3_nk3qv")
 
 [node name="Level_02" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=989679178 instance=ExtResource("2_c5c28")]
 layout_mode = 2
