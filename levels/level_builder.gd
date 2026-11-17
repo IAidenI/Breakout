@@ -1,3 +1,4 @@
+@tool
 class_name LevelBuilder
 extends Node2D
 
@@ -42,3 +43,8 @@ func _on_brick_destroyed() -> void:
 	remaining -= 1
 	if remaining <= 0:
 		level_cleared.emit()
+
+func clear() -> void:
+	for child in get_children():
+		child.queue_free()
+	remaining = 0
