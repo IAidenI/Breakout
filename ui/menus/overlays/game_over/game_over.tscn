@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cofmc56tb7mtx"]
+
+[ext_resource type="Script" uid="uid://dde31lc0fhfr2" path="res://ui/menus/overlays/game_over/game_over.gd" id="1_immk6"]
+
+[node name="GameOver" type="Control" unique_id=1088216974]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_immk6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1774944282]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1065453094]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=113487123]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=2146941564]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "GAME OVER"
+
+[node name="NewGame" type="Button" parent="CenterContainer/VBoxContainer" unique_id=14255390]
+layout_mode = 2
+text = "NEW GAME"
+
+[node name="Exit" type="Button" parent="CenterContainer/VBoxContainer" unique_id=689794157]
+layout_mode = 2
+text = "EXIT"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

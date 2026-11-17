@@ -1,4 +1,4 @@
-class_name Main
+class_name Game
 extends Node2D
 
 @export var level: LevelData
@@ -35,14 +35,11 @@ func _on_deadzone_body_entered(body: Node2D) -> void:
 	# Supprime une vie si la deadzone est atteinte par la balle
 	PlayerState.lives -= 1
 	if PlayerState.lives > 0:
-		print("Vies restante : ", PlayerState.lives)
 		_respawn_ball()
 	else:
-		print("lu")
 		$CanvasLayer/GameOver.visible = true
 		get_tree().paused = true
 
 func _on_level_cleared() -> void:
-	print("la")
 	$CanvasLayer/Victory.visible = true
 	get_tree().paused = true

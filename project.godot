@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Breakout"
-run/main_scene="uid://b50esatj28uku"
+run/main_scene="uid://bt3afyij83uj4"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 PlayerState="*uid://df6y8r1vofb2s"
+SceneManager="*uid://boe8les3rshmi"
 
 [display]
 

@@ -58,6 +58,7 @@ res://
 - [ ] Check les private (fonctions, variables)
 - [ ] Améliorer l'ui
 - [ ] Commenter
+- [ ] Gestion des erreurs
 
 ## Lancer le projet
 

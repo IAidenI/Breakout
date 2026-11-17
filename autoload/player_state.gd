@@ -11,3 +11,7 @@ var lives := MAX_LIVES:
 
 var score := 0
 var completed_levels: Array[int] = []
+
+func reset() -> void:
+	lives = MAX_LIVES
+	score = 0
