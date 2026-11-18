@@ -34,6 +34,8 @@ func _ready() -> void:
 	$CanvasLayer/Victory.new_game_requested.connect(_on_new_game_requested)
 	$CanvasLayer/Victory.main_menu_requested.connect(_on_main_menu_requested)
 	$CanvasLayer/Pause.main_menu_requested.connect(_on_main_menu_requested)
+	
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 func _respawn_ball() -> void:
 	var paddle_pos: Vector2 = $Arena/Paddle.global_position

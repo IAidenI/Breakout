@@ -26,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.5019608)
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1636498109]
+[node name="LevelSelectPanel" type="CenterContainer" parent="." unique_id=1636498109]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,40 +34,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1635709256]
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelectPanel" unique_id=1635709256]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1778497527]
+[node name="Title" type="Label" parent="LevelSelectPanel/VBoxContainer" unique_id=1778497527]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "LEVELS SELECTOR"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=1925040706]
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelSelectPanel/VBoxContainer" unique_id=1925040706]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Level_01" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=413862430 instance=ExtResource("2_c5c28")]
+[node name="Level_01" parent="LevelSelectPanel/VBoxContainer/HBoxContainer" unique_id=413862430 instance=ExtResource("2_c5c28")]
 layout_mode = 2
 title = "Level 1"
 level = ExtResource("3_nk3qv")
 
-[node name="Level_02" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=989679178 instance=ExtResource("2_c5c28")]
+[node name="Level_02" parent="LevelSelectPanel/VBoxContainer/HBoxContainer" unique_id=989679178 instance=ExtResource("2_c5c28")]
 layout_mode = 2
 title = "Level 2"
 level = ExtResource("3_dde8m")
 
-[node name="Level_03" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=2015252023 instance=ExtResource("2_c5c28")]
+[node name="Level_03" parent="LevelSelectPanel/VBoxContainer/HBoxContainer" unique_id=2015252023 instance=ExtResource("2_c5c28")]
 layout_mode = 2
 title = "Level 3"
 level = ExtResource("5_sdj5t")
 
-[node name="Level_04" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=583898894 instance=ExtResource("2_c5c28")]
+[node name="Level_04" parent="LevelSelectPanel/VBoxContainer/HBoxContainer" unique_id=583898894 instance=ExtResource("2_c5c28")]
 layout_mode = 2
 title = "Level 4"
 level = ExtResource("6_xurs4")
 
-[node name="Level_05" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=1593190721 instance=ExtResource("2_c5c28")]
+[node name="Level_05" parent="LevelSelectPanel/VBoxContainer/HBoxContainer" unique_id=1593190721 instance=ExtResource("2_c5c28")]
 layout_mode = 2
 title = "Level 5"
 level = ExtResource("7_8wpn5")

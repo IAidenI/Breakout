@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://l1fd045twtp5"]
 
 [ext_resource type="Script" uid="uid://ditc1ri1j4602" path="res://ui/menus/overlays/pause/pause.gd" id="1_fgql8"]
+[ext_resource type="PackedScene" uid="uid://ccusxc7mplqlp" path="res://ui/menus/screens/settings/settings.tscn" id="2_m1eak"]
 
 [node name="Pause" type="Control" unique_id=1836645974]
 process_mode = 3
@@ -21,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.5019608)
 
-[node name="CenterContainer2" type="CenterContainer" parent="." unique_id=871232462]
+[node name="PausePanel" type="CenterContainer" parent="." unique_id=871232462]
 layout_mode = 0
 offset_left = 461.0
 offset_top = 261.0
@@ -30,26 +31,35 @@ offset_bottom = 386.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2" unique_id=1914568130]
+[node name="VBoxContainer" type="VBoxContainer" parent="PausePanel" unique_id=1914568130]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="CenterContainer2/VBoxContainer" unique_id=1940018539]
+[node name="Title" type="Label" parent="PausePanel/VBoxContainer" unique_id=1940018539]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "PAUSE"
 
-[node name="ResumeButton" type="Button" parent="CenterContainer2/VBoxContainer" unique_id=2123039697]
+[node name="ResumeButton" type="Button" parent="PausePanel/VBoxContainer" unique_id=2123039697]
 layout_mode = 2
 text = "RESUME"
 
-[node name="MainMenuButton" type="Button" parent="CenterContainer2/VBoxContainer" unique_id=35567579]
+[node name="SettingsButton" type="Button" parent="PausePanel/VBoxContainer" unique_id=39026338]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="MainMenuButton" type="Button" parent="PausePanel/VBoxContainer" unique_id=35567579]
 layout_mode = 2
 text = "MAIN MENU"
 
-[node name="ExitButton" type="Button" parent="CenterContainer2/VBoxContainer" unique_id=1773908344]
+[node name="ExitButton" type="Button" parent="PausePanel/VBoxContainer" unique_id=1773908344]
 layout_mode = 2
 text = "EXIT"
 
-[connection signal="pressed" from="CenterContainer2/VBoxContainer/ResumeButton" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="CenterContainer2/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
-[connection signal="pressed" from="CenterContainer2/VBoxContainer/ExitButton" to="." method="_on_exit_pressed"]
+[node name="Settings" parent="." unique_id=1549774057 instance=ExtResource("2_m1eak")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="PausePanel/VBoxContainer/ResumeButton" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PausePanel/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="PausePanel/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="PausePanel/VBoxContainer/ExitButton" to="." method="_on_exit_pressed"]

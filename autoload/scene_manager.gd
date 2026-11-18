@@ -3,7 +3,8 @@ extends Node
 const SCENES := {
 	"main_menu": "res://ui/menus/screens/main_menu/main_menu.tscn",
 	"game": "res://game/game.tscn",
-	"level_selector": "res://ui/menus/screens/level_select/level_select.tscn"
+	"level_selector": "res://ui/menus/screens/level_select/level_select.tscn",
+	"settings": "res://ui/menus/screens/settings/settings.tscn"
 }
 var _params := {}
 

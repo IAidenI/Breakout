@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bt3afyij83uj4"]
 
 [ext_resource type="Script" uid="uid://cymp1etbckf10" path="res://ui/menus/screens/main_menu/main_menu.gd" id="1_1swfw"]
+[ext_resource type="PackedScene" uid="uid://ccusxc7mplqlp" path="res://ui/menus/screens/settings/settings.tscn" id="2_3np11"]
 
 [node name="MainMenu" type="Control" unique_id=43607313]
 layout_mode = 3
@@ -11,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1swfw")
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=729461103]
+[node name="MainMenuPanel" type="CenterContainer" parent="." unique_id=729461103]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,22 +20,31 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=824133219]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuPanel" unique_id=824133219]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=588087562]
+[node name="Title" type="Label" parent="MainMenuPanel/VBoxContainer" unique_id=588087562]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "BREAKOUT"
 horizontal_alignment = 1
 
-[node name="NewGameButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=306578832]
+[node name="NewGameButton" type="Button" parent="MainMenuPanel/VBoxContainer" unique_id=306578832]
 layout_mode = 2
 text = "NEW GAME"
 
-[node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1857111771]
+[node name="Settings" type="Button" parent="MainMenuPanel/VBoxContainer" unique_id=690010418]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="ExitButton" type="Button" parent="MainMenuPanel/VBoxContainer" unique_id=1857111771]
 layout_mode = 2
 text = "EXIT"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_pressed"]
+[node name="Settings" parent="." unique_id=1549774057 instance=ExtResource("2_3np11")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="MainMenuPanel/VBoxContainer/NewGameButton" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MainMenuPanel/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainMenuPanel/VBoxContainer/ExitButton" to="." method="_on_exit_pressed"]
