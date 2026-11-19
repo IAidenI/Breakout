@@ -3,6 +3,7 @@ class_name LevelBuilder
 extends Node2D
 
 signal level_cleared
+signal brick_destroyed(at: Vector2)
 
 @export var brick_scene :PackedScene
 var remaining :int = 0
@@ -39,7 +40,8 @@ func spawn_brick(type: Brick.Type, top_left: Vector2) -> void:
 	brick.destroyed.connect(_on_brick_destroyed)
 	remaining += 1
 
-func _on_brick_destroyed() -> void:
+func _on_brick_destroyed(at: Vector2) -> void:
+	brick_destroyed.emit(at)
 	remaining -= 1
 	if remaining <= 0:
 		level_cleared.emit()

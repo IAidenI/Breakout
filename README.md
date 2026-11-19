@@ -54,6 +54,7 @@ res://
 - [X] Victoire / défaite
 - [ ] Power-ups
 - [X] Menu de sélection de niveau/Niveaux supplémentaires
+- [ ] Choix de couleurs (paddle, balle, blocks, fond)
 - [ ] Sons, particules, screen shake
 - [ ] Check les private (fonctions, variables)
 - [ ] Améliorer l'ui

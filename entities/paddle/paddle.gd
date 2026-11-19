@@ -28,7 +28,7 @@ func keyboard() -> void:
 	move_and_slide()
 
 func mouse(delta: float) -> void:
-	var mouse_pos_x :float = get_viewport().get_mouse_position().x
+	var mouse_pos_x :float = get_global_mouse_position().x
 	velocity.x = (mouse_pos_x - global_position.x) / delta
 	move_and_slide()
 

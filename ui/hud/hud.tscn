@@ -11,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_e0nub")
 heart_full = ExtResource("1_xmswo")
 heart_empty = ExtResource("3_e0nub")

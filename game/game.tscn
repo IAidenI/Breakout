@@ -44,6 +44,8 @@ scale = Vector2(2, 2)
 script = ExtResource("5_li27q")
 brick_scene = ExtResource("6_g6fv7")
 
+[node name="PowerUps" type="Node2D" parent="." unique_id=816838597]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2023204843]
 
 [node name="Hud" parent="CanvasLayer" unique_id=812766956 instance=ExtResource("7_frwyw")]

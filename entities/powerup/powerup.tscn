@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bhgk1si6yas4f"]
+
+[ext_resource type="Texture2D" uid="uid://0r7aoto843x2" path="res://entities/powerup/white-circle-icon.png" id="1_03lbw"]
+[ext_resource type="Script" uid="uid://dqdvd11ga4wuc" path="res://entities/powerup/powerup.gd" id="1_ax78m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u13ga"]
+radius = 8.0
+
+[node name="Powerups" type="Area2D" unique_id=1934550936]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_ax78m")
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=994839900]
+shape = SubResource("CircleShape2D_u13ga")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2065142880]
+texture = ExtResource("1_03lbw")
+
+[node name="Name" type="Label" parent="Sprite2D" unique_id=1622390459]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

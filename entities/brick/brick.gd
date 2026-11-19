@@ -2,7 +2,7 @@
 class_name Brick
 extends StaticBody2D
 
-signal destroyed
+signal destroyed(at: Vector2)
 
 enum Type { FLAT, WIDE, SQUARE }
 @export var type :Type:
@@ -41,10 +41,10 @@ static func get_size_for(t: Type) -> Vector2:
 	var data: Dictionary = TYPE_DATA[t]
 	return Vector2(data["region"].size.x / data["states"], data["region"].size.y)
 
-func hit() -> void:
-	hp -= 1
+func hit(damage: int) -> void:
+	hp -= damage
 	if hp <= 0:
-		destroyed.emit()
+		destroyed.emit(global_position)
 		queue_free()
 	else:
 		$Sprite2D.frame = max_hp - hp
