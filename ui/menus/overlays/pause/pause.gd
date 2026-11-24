@@ -2,12 +2,16 @@ class_name Pause
 extends Control
 
 signal main_menu_requested
+signal retry_requested
 
 func _ready() -> void:
 	$Settings.closed.connect(_on_settings_closed)
 
 func _on_resume_pressed() -> void:
 	pause()
+
+func _on_retry_button_pressed() -> void:
+	retry_requested.emit()
 
 func _on_settings_button_pressed() -> void:
 	$PausePanel.hide()

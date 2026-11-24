@@ -44,6 +44,10 @@ text = "PAUSE"
 layout_mode = 2
 text = "RESUME"
 
+[node name="RetryButton" type="Button" parent="PausePanel/VBoxContainer" unique_id=1143807124]
+layout_mode = 2
+text = "RETRY"
+
 [node name="SettingsButton" type="Button" parent="PausePanel/VBoxContainer" unique_id=39026338]
 layout_mode = 2
 text = "SETTINGS"
@@ -61,6 +65,7 @@ visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="PausePanel/VBoxContainer/ResumeButton" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PausePanel/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="PausePanel/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="PausePanel/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="PausePanel/VBoxContainer/ExitButton" to="." method="_on_exit_pressed"]

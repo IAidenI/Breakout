@@ -3,12 +3,17 @@
 [ext_resource type="Script" uid="uid://jf78vhuwxxxg" path="res://game/game.gd" id="1_lx3aj"]
 [ext_resource type="Resource" uid="uid://bx3b424uwppwf" path="res://levels/maps/level_02.tres" id="2_itumj"]
 [ext_resource type="Texture2D" uid="uid://calwstwj7q0c6" path="res://game/Backround_Tiles.png" id="3_dp3pf"]
+[ext_resource type="Script" uid="uid://5vqjg3tvkltb" path="res://entities/powerup/effects/powerup_effect.gd" id="3_qf6n1"]
 [ext_resource type="PackedScene" uid="uid://kgnuerqbsbmh" path="res://arena/arena.tscn" id="4_ioaqv"]
+[ext_resource type="Resource" uid="uid://rvw8xcaixmuu" path="res://entities/powerup/effects/fire.tres" id="4_vsp63"]
 [ext_resource type="Script" uid="uid://dqt854ce2uqjo" path="res://levels/level_builder.gd" id="5_li27q"]
+[ext_resource type="Resource" uid="uid://bhi2o8vu06h04" path="res://entities/powerup/effects/life.tres" id="5_vsp63"]
 [ext_resource type="PackedScene" uid="uid://bt0dk0t3wdskm" path="res://entities/brick/brick.tscn" id="6_g6fv7"]
+[ext_resource type="Resource" uid="uid://5v3umjg70ihp" path="res://entities/powerup/effects/split.tres" id="6_hb504"]
 [ext_resource type="PackedScene" uid="uid://b7x4ev550oke6" path="res://ui/hud/hud.tscn" id="7_frwyw"]
 [ext_resource type="PackedScene" uid="uid://cofmc56tb7mtx" path="res://ui/menus/overlays/game_over/game_over.tscn" id="8_yyxey"]
 [ext_resource type="PackedScene" uid="uid://hcu78plsyfs0" path="res://ui/menus/overlays/victory/victory.tscn" id="9_tv0fx"]
+[ext_resource type="Script" uid="uid://dyy0p54q2y4ny" path="res://entities/ball/ball_manager.gd" id="10_b686c"]
 [ext_resource type="PackedScene" uid="uid://l1fd045twtp5" path="res://ui/menus/overlays/pause/pause.tscn" id="10_j8tme"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dugh"]
@@ -27,9 +32,10 @@ texture_region_size = Vector2i(32, 96)
 tile_size = Vector2i(32, 96)
 sources/0 = SubResource("TileSetAtlasSource_4dugh")
 
-[node name="Main" type="Node2D" unique_id=2023419297]
+[node name="Game" type="Node2D" unique_id=2023419297]
 script = ExtResource("1_lx3aj")
 level = ExtResource("2_itumj")
+powerup_effects = Array[ExtResource("3_qf6n1")]([ExtResource("4_vsp63"), ExtResource("5_vsp63"), ExtResource("6_hb504")])
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=751900887]
 position = Vector2(0, -24)
@@ -45,6 +51,9 @@ script = ExtResource("5_li27q")
 brick_scene = ExtResource("6_g6fv7")
 
 [node name="PowerUps" type="Node2D" parent="." unique_id=816838597]
+
+[node name="Balls" type="Node2D" parent="." unique_id=428075448]
+script = ExtResource("10_b686c")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2023204843]
 

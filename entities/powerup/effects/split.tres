@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SplitEffect" format=3 uid="uid://5v3umjg70ihp"]
+
+[ext_resource type="Script" uid="uid://b5l2t2pl0tfn1" path="res://entities/powerup/effects/split.gd" id="1_j8s15"]
+
+[resource]
+script = ExtResource("1_j8s15")
+color = Color(1, 0.87058824, 0.12941177, 1)
+label = "+1"
+metadata/_custom_type_script = "uid://b5l2t2pl0tfn1"

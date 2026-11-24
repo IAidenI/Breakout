@@ -13,12 +13,20 @@ const HOLD_OFFSET := Vector2(0, -15)
 
 var is_in_fire :bool = false
 
+func is_moving() -> bool:
+	return true if state == State.MOVING else false
+
 func launch() -> void:
 	if state != State.HELD:
 		return
+
 	state = State.MOVING
 	var angle := randf_range(-LAUNCH_ANGLE, LAUNCH_ANGLE)
 	velocity = Vector2.UP.rotated(deg_to_rad(angle)) * SPEED
+
+func launch_in(direction: Vector2):
+	state = State.MOVING
+	velocity = direction.normalized() * SPEED
 
 func hold_on(new_holder: Node2D) -> void:
 	holder = new_holder
@@ -51,7 +59,6 @@ func _physics_process(delta: float) -> void:
 		obstacle.hit(1)
 	
 	velocity = velocity.bounce(collision.get_normal())
-
 
 func _bounce_on_paddle(paddle: Paddle, collision: KinematicCollision2D) -> void:
 	# Convertit la position global de la collision en un point entre -1 et 1

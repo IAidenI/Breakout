@@ -3,12 +3,16 @@ extends Node2D
 
 @export var level: LevelData
 const TOP_MARGIN := 50.0
+
 const POWERUP_SCENE := preload("res://entities/powerup/powerup.tscn")
 const POWERUP_RATE :float = 0.5
+@export var powerup_effects :Array[PowerUpEffect]
 
-var _move_mode :Settings.MoveMode
+@onready var balls  :BallManager = $Balls
+@onready var paddle :Paddle = $Arena/Paddle
 
 func _ready() -> void:
+	# Récupère le niveau à charger
 	var chosen :LevelData = SceneManager.get_param("level")
 	if chosen:
 		level = chosen
@@ -27,7 +31,7 @@ func _ready() -> void:
 	$Arena/Deadzone.body_entered.connect(_on_deadzone_body_entered)
 	
 	# Fait apparaitre une balle
-	_respawn_ball()
+	$Balls.spawn_on(paddle)
 	
 	# Ecoute si le niveau est terminé ou non
 	$Bricks.level_cleared.connect(_on_level_cleared)
@@ -41,31 +45,34 @@ func _ready() -> void:
 	$CanvasLayer/Victory.new_game_requested.connect(_on_new_game_requested)
 	$CanvasLayer/Victory.main_menu_requested.connect(_on_main_menu_requested)
 	$CanvasLayer/Pause.main_menu_requested.connect(_on_main_menu_requested)
+	$CanvasLayer/Pause.retry_requested.connect(_on_retry_requested)
 	
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	
-	# Ecoute le mode de déplacement choisit
-	Settings.move_mode_changed.connect(_on_mode_changed)
 
 func _unhandled_input(event: InputEvent) -> void:
 	var action := "launch_mouse" if Settings.move_mode == Settings.MoveMode.MOUSE else "launch_keyboard"
 	if event.is_action_pressed(action):
-		$Arena/Ball.launch()
-
-func _on_mode_changed(move_mode: Settings.MoveMode) -> void:
-	_move_mode = move_mode
-
-func _respawn_ball() -> void:
-	$Arena/Ball.hold_on($Arena/Paddle)
+		$Balls.launch_all()
+	
+	if event.is_action_pressed("add_ball"):
+		$Balls.spawn_on(paddle)
 
 func _on_deadzone_body_entered(body: Node2D) -> void:
 	if body is not Ball:
 		return
 	
-	# Supprime une vie si la deadzone est atteinte par la balle
+	# Détruit la balle
+	body.queue_free()
+	
+	# Ne fait rien si il reste des balles
+	if $Balls.count_remaining(body) > 0:
+		return
+	
+	# Enlève une vie si il n'en reste plus
 	PlayerState.lives -= 1
 	if PlayerState.lives > 0:
-		_respawn_ball()
+		pass
+		$Balls.spawn_on(paddle)
 	else:
 		end_game($CanvasLayer/GameOver)
 
@@ -84,18 +91,13 @@ func _on_brick_destroyed(at: Vector2) -> void:
 
 func spawn_powerup(at: Vector2) -> void:
 	var powerup :PowerUp = POWERUP_SCENE.instantiate()
-	powerup.type = PowerUp.Type.values().pick_random()
+	powerup.effect = powerup_effects.pick_random()
 	powerup.global_position = at
 	powerup.collected.connect(_on_powerup_collected)
 	$PowerUps.add_child.call_deferred(powerup)
 
-func _on_powerup_collected(type: PowerUp.Type) -> void:
-	match type:
-		#PowerUp.Type.LARGE: print("large")
-		#PowerUp.Type.SMALL: print("small")
-		#PowerUp.Type.MULTI: $Arena/Ball.add_one()
-		PowerUp.Type.LIFE:  PlayerState.lives += 1
-		PowerUp.Type.FIRE:  $Arena/Ball.fire(7.0)
+func _on_powerup_collected(effect: PowerUpEffect) -> void:
+	effect.apply(self)
 
 func _on_retry_requested() -> void:
 	PlayerState.reset()
