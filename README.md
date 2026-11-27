@@ -10,8 +10,8 @@ Petit clone de Breakout fait avec **Godot 4**, pour s'entraîner sur les bases d
 
 <table align="center">
   <tr>
-    <td align="center"><img src="docs/screenshots/level.png" alt="Niveau" width="220"><br><sub>Niveau</sub></td>
-    <td align="center"><img src="docs/screenshots/powerups.png" alt="Power-ups" width="220"><br><sub>Power-ups</sub></td>
+    <td align="center"><img src="docs/screenshots/main_menu.png" alt="Niveau" width="220"><br><sub>Niveau</sub></td>
+    <td align="center"><img src="docs/screenshots/settings.png" alt="Power-ups" width="220"><br><sub>Power-ups</sub></td>
     <td align="center"><img src="docs/screenshots/level_select.png" alt="Sélection de niveau" width="220"><br><sub>Sélection de niveau</sub></td>
   </tr>
   <tr>
@@ -53,7 +53,7 @@ Le mode de contrôle se choisit dans les paramètres.
 | ♥ | Vie | +1 vie (dans la limite du maximum) |
 | ✦ | Feu | La balle traverse et détruit les briques d'un coup |
 
-Chaque power-up est un fichier `.tres` : le script définit ce que fait l'effet, la ressource définit ses réglages (couleur, symbole, durée…).
+Chaque power-up est un fichier `.tres` : le script définit ce que fait l'effet, la ressource définit ses réglages (icône, durée…).
 
 ## Structure
 
@@ -98,6 +98,19 @@ res://
 - [ ] Améliorer l'UI
 - [ ] Commenter le code
 - [ ] Gestion des erreurs
+
+## TODO
+
+- [ ] Refacto complet : ajouter des commentaires, renommer, passer en privé les variables et fonctions internes
+- [ ] Power-ups : ajouter un effet visuel sur la balle quand l'effet la concerne
+- [ ] Power-ups : afficher dans le HUD les effets actifs et le temps restant avant leur désactivation
+- [ ] Ajouter plus de paramètres
+- [ ] Refaire le visuel des menus
+- [ ] Ajouter le score
+- [ ] Ajouter des effets sonores
+- [ ] Ajouter une section dans le HUD pour l'affichage des erreurs
+- [ ] Changement de couleur du paddle et de la balle
+- [ ] Changer le fond du menu principal
 
 ## Lancer le projet
 
