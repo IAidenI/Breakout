@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://hcu78plsyfs0" path="res://ui/menus/overlays/victory/victory.tscn" id="9_tv0fx"]
 [ext_resource type="Script" uid="uid://dyy0p54q2y4ny" path="res://entities/ball/ball_manager.gd" id="10_b686c"]
 [ext_resource type="PackedScene" uid="uid://l1fd045twtp5" path="res://ui/menus/overlays/pause/pause.tscn" id="10_j8tme"]
+[ext_resource type="Script" uid="uid://ck4f4uc4f7u45" path="res://entities/powerup/effects/effect_manager.gd" id="13_ln7ps"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dugh"]
 texture = ExtResource("3_dp3pf")
@@ -53,6 +54,9 @@ script = ExtResource("5_li27q")
 brick_scene = ExtResource("6_g6fv7")
 
 [node name="PowerUps" type="Node2D" parent="." unique_id=816838597]
+
+[node name="EffectManager" type="Node" parent="." unique_id=502125522]
+script = ExtResource("13_ln7ps")
 
 [node name="Balls" type="Node2D" parent="." unique_id=428075448]
 script = ExtResource("10_b686c")

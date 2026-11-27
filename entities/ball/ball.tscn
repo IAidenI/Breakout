@@ -19,8 +19,3 @@ shape = SubResource("CircleShape2D_evcbc")
 texture = ExtResource("1_hvtcl")
 region_enabled = true
 region_rect = Rect2(144, 72, 8, 8)
-
-[node name="FireTimer" type="Timer" parent="." unique_id=64747038]
-one_shot = true
-
-[connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]

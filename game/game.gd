@@ -48,6 +48,10 @@ func _ready() -> void:
 	$CanvasLayer/Pause.retry_requested.connect(_on_retry_requested)
 	
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	
+	$EffectManager.setup(self)
+	$EffectManager.effect_started.connect($CanvasLayer/Hud.on_effect_started)
+	$EffectManager.effect_ended.connect($CanvasLayer/Hud.on_effect_ended)
 
 func _unhandled_input(event: InputEvent) -> void:
 	var action := "launch_mouse" if Settings.move_mode == Settings.MoveMode.MOUSE else "launch_keyboard"
@@ -95,7 +99,7 @@ func spawn_powerup(at: Vector2) -> void:
 	$PowerUps.add_child.call_deferred(powerup)
 
 func _on_powerup_collected(effect: PowerUpEffect) -> void:
-	effect.apply(self)
+	$EffectManager.activate(effect)
 
 func _on_retry_requested() -> void:
 	PlayerState.reset()

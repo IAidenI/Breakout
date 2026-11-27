@@ -70,12 +70,8 @@ func _bounce_on_paddle(paddle: Paddle, collision: KinematicCollision2D) -> void:
 	var angle :float   = deg_to_rad(offset * MAX_BOUNCE_ANGLE)
 	velocity = Vector2.UP.rotated(angle) * velocity.length()
 
-func fire(duration: float) -> void:
-	is_in_fire = true
-	$FireTimer.start(duration)
-
-func _on_fire_timer_timeout() -> void:
-	is_in_fire = false
+func set_fire(on: bool) -> void:
+	is_in_fire = on
 
 func add_one() -> void:
 	pass

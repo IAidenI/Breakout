@@ -113,6 +113,7 @@ res://
 - [ ] Changement de couleur du paddle et de la balle
 - [ ] Changer le fond du menu principal
 - [ ] Ajouter des fonts personalisé
+- [ ] Système de choix de la langue
 
 ## Lancer le projet
 

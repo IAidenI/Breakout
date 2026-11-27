@@ -11,4 +11,7 @@ region = Rect2(18, 0, 16, 10)
 script = ExtResource("1_fc1kc")
 shape = 2
 icon = SubResource("AtlasTexture_nws6a")
+display_name = "SMALL"
+duration = 15.0
+slot = 1
 metadata/_custom_type_script = "uid://co4mjqle024v"

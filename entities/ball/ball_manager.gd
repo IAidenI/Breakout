@@ -3,6 +3,7 @@ extends Node2D
 
 const BALL_SCENE := preload("res://entities/ball/ball.tscn")
 const SPLIT_ANGLE := 20.0
+var fire :bool = false
 
 func spawn_on(entity: Paddle) -> void:
 	var ball :Ball = BALL_SCENE.instantiate()
@@ -18,9 +19,10 @@ func count_remaining(body: Node) -> int:
 		func(ball: Ball): return ball != body and not ball.is_queued_for_deletion()
 	).size()
 
-func fire_all(duration: float) -> void:
+func set_fire(on: bool) -> void:
+	fire = on
 	for ball in get_children():
-		ball.fire(duration)
+		ball.set_fire(on)
 
 func split() -> void:
 	var source :Ball = get_moving_ball()

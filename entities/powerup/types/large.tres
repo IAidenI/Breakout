@@ -9,5 +9,9 @@ region = Rect2(0, 0, 16, 10)
 
 [resource]
 script = ExtResource("1_fdx0c")
+shape = 0
 icon = SubResource("AtlasTexture_cydbn")
+display_name = "LARGE"
+duration = 15.0
+slot = 1
 metadata/_custom_type_script = "uid://co4mjqle024v"

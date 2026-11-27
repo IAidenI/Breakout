@@ -4,6 +4,60 @@
 [ext_resource type="Texture2D" uid="uid://dkvrskihyc217" path="res://ui/hud/heart_full.tres" id="1_xmswo"]
 [ext_resource type="Texture2D" uid="uid://cksybrmev6b5b" path="res://ui/hud/heart_empty.tres" id="3_e0nub"]
 
+[sub_resource type="Gradient" id="Gradient_e0nub"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.23921569, 0.12156863, 0.05490196, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o2lis"]
+gradient = SubResource("Gradient_e0nub")
+width = 16
+height = 16
+
+[sub_resource type="Gradient" id="Gradient_imuuq"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0.6862745, 0.37254903, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aixkq"]
+gradient = SubResource("Gradient_imuuq")
+width = 16
+height = 16
+
+[sub_resource type="Gradient" id="Gradient_w75iv"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.10980392, 0.2, 0.09019608, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e0nub"]
+gradient = SubResource("Gradient_w75iv")
+width = 16
+height = 16
+
+[sub_resource type="Gradient" id="Gradient_kwc50"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.5882353, 0.8235294, 0.43137255, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w75iv"]
+gradient = SubResource("Gradient_kwc50")
+width = 16
+height = 16
+
+[sub_resource type="Gradient" id="Gradient_o2lis"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.22745098, 0.078431375, 0.08627451, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_imuuq"]
+gradient = SubResource("Gradient_o2lis")
+width = 16
+height = 16
+
+[sub_resource type="Gradient" id="Gradient_gfles"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.9411765, 0.47058824, 0.43137255, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gfles"]
+gradient = SubResource("Gradient_gfles")
+width = 16
+height = 16
+
 [node name="Hud" type="Control" unique_id=812766956]
 layout_mode = 3
 anchors_preset = 15
@@ -27,3 +81,62 @@ theme_override_constants/margin_bottom = 8
 
 [node name="Hearts" type="HBoxContainer" parent="MarginContainer" unique_id=253644757]
 layout_mode = 2
+
+[node name="ActiveEffects" type="VBoxContainer" parent="." unique_id=257924832]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -158.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Title" type="Label" parent="ActiveEffects" unique_id=1798805731]
+layout_mode = 2
+text = "ACTIVE EFFECTS :"
+
+[node name="Effects" type="GridContainer" parent="ActiveEffects" unique_id=617973613]
+layout_mode = 2
+columns = 2
+
+[node name="FireLabel" type="Label" parent="ActiveEffects/Effects" unique_id=143726732]
+visible = false
+layout_mode = 2
+text = " - FIRE"
+
+[node name="FireProgressBar" type="TextureProgressBar" parent="ActiveEffects/Effects" unique_id=2143768301]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+step = 0.01
+fill_mode = 4
+texture_under = SubResource("GradientTexture2D_o2lis")
+texture_progress = SubResource("GradientTexture2D_aixkq")
+
+[node name="LargeLabel" type="Label" parent="ActiveEffects/Effects" unique_id=1913214822]
+visible = false
+layout_mode = 2
+text = " - LARGE"
+
+[node name="LargeProgressBar" type="TextureProgressBar" parent="ActiveEffects/Effects" unique_id=1380942092]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+step = 0.01
+fill_mode = 4
+texture_under = SubResource("GradientTexture2D_e0nub")
+texture_progress = SubResource("GradientTexture2D_w75iv")
+
+[node name="SmallLabel" type="Label" parent="ActiveEffects/Effects" unique_id=105157718]
+visible = false
+layout_mode = 2
+text = " - SMALL"
+
+[node name="SmallProgressBar" type="TextureProgressBar" parent="ActiveEffects/Effects" unique_id=1214113194]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+step = 0.01
+fill_mode = 4
+texture_under = SubResource("GradientTexture2D_imuuq")
+texture_progress = SubResource("GradientTexture2D_gfles")

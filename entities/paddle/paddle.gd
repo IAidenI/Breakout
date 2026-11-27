@@ -44,10 +44,8 @@ func mouse(delta: float) -> void:
 func _on_mode_changed(move_mode: Settings.MoveMode) -> void:
 	_move_mode = move_mode
 
-func resize(shape: Shape, duration := 0.0) -> void:
+func resize(shape: Shape) -> void:
 	set_witdh(WIDTHS[shape])
-	if duration > 0.0:
-		$ResizeTimer.start(duration)
 
 func set_witdh(total: float) -> void:
 	var middle := total - 2 * CAP_WIDTH
@@ -57,6 +55,3 @@ func set_witdh(total: float) -> void:
 	$Visual/Left.position.x = -half + CAP_WIDTH / 2
 	$Visual/Right.position.x = half - CAP_WIDTH / 2
 	$Hitbox.shape.size.x = total
-
-func _on_resize_timer_timeout() -> void:
-	resize(Shape.NORMAL)

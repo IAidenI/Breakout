@@ -1,7 +1,8 @@
 class_name FireEffect
 extends PowerUpEffect
 
-@export var duration :float = 7.0
-
 func apply(game: Game) -> void:
-	game.balls.fire_all(duration)
+	game.balls.set_fire(true)
+
+func remove(game: Game) -> void:
+	game.balls.set_fire(false)
