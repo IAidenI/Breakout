@@ -67,7 +67,8 @@ res://
 │   ├── ball/          # balle + BallManager
 │   ├── brick/
 │   └── powerup/
-│       └── effects/   # un script par comportement, un .tres par power-up
+│       └── effects/   # un script par comportement
+│       └── types/     # les power-ups du jeu : un .tres par power-up
 ├── levels/
 │   ├── maps/          # un niveau = un .tres décrivant la disposition des briques
 │   ├── level_data.gd
@@ -111,6 +112,7 @@ res://
 - [ ] Ajouter une section dans le HUD pour l'affichage des erreurs
 - [ ] Changement de couleur du paddle et de la balle
 - [ ] Changer le fond du menu principal
+- [ ] Ajouter des fonts personalisé
 
 ## Lancer le projet
 
