@@ -45,13 +45,13 @@ Le mode de contrôle se choisit dans les paramètres.
 
 ## Power-ups
 
-| Symbole | Nom | Effet |
-|---|---|---|
-| L | Large | Agrandit le paddle |
-| S | Small | Rétrécit le paddle (malus) |
-| +1 | Multi-balles | La balle se divise en trois |
-| ♥ | Vie | +1 vie (dans la limite du maximum) |
-| ✦ | Feu | La balle traverse et détruit les briques d'un coup |
+| | Nom | Effet |
+|:---:|---|---|
+| <img src="docs/powerups/large.png" alt="Large" width="64"> | Large | Agrandit le paddle |
+| <img src="docs/powerups/small.png" alt="Small" width="64"> | Small | Rétrécit le paddle (malus) |
+| <img src="docs/powerups/multi.png" alt="Multi-balles" width="64"> | Multi-balles | La balle se divise en trois |
+| <img src="docs/powerups/life.png" alt="Vie" width="64"> | Vie | +1 vie (dans la limite du maximum) |
+| <img src="docs/powerups/fire.png" alt="Feu" width="64"> | Feu | La balle traverse et détruit les briques d'un coup |
 
 Chaque power-up est un fichier `.tres` : le script définit ce que fait l'effet, la ressource définit ses réglages (icône, durée…).
 
