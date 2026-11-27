@@ -10,7 +10,9 @@
 [ext_resource type="Resource" uid="uid://bhi2o8vu06h04" path="res://entities/powerup/effects/life.tres" id="5_vsp63"]
 [ext_resource type="PackedScene" uid="uid://bt0dk0t3wdskm" path="res://entities/brick/brick.tscn" id="6_g6fv7"]
 [ext_resource type="Resource" uid="uid://5v3umjg70ihp" path="res://entities/powerup/effects/split.tres" id="6_hb504"]
+[ext_resource type="Resource" uid="uid://buqfavhytdtt6" path="res://entities/powerup/effects/large.tres" id="7_4cobl"]
 [ext_resource type="PackedScene" uid="uid://b7x4ev550oke6" path="res://ui/hud/hud.tscn" id="7_frwyw"]
+[ext_resource type="Resource" uid="uid://cvah6pjkq7tcx" path="res://entities/powerup/effects/small.tres" id="8_ln7ps"]
 [ext_resource type="PackedScene" uid="uid://cofmc56tb7mtx" path="res://ui/menus/overlays/game_over/game_over.tscn" id="8_yyxey"]
 [ext_resource type="PackedScene" uid="uid://hcu78plsyfs0" path="res://ui/menus/overlays/victory/victory.tscn" id="9_tv0fx"]
 [ext_resource type="Script" uid="uid://dyy0p54q2y4ny" path="res://entities/ball/ball_manager.gd" id="10_b686c"]
@@ -35,7 +37,7 @@ sources/0 = SubResource("TileSetAtlasSource_4dugh")
 [node name="Game" type="Node2D" unique_id=2023419297]
 script = ExtResource("1_lx3aj")
 level = ExtResource("2_itumj")
-powerup_effects = Array[ExtResource("3_qf6n1")]([ExtResource("4_vsp63"), ExtResource("5_vsp63"), ExtResource("6_hb504")])
+powerup_effects = Array[ExtResource("3_qf6n1")]([ExtResource("4_vsp63"), ExtResource("5_vsp63"), ExtResource("6_hb504"), ExtResource("7_4cobl"), ExtResource("8_ln7ps")])
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=751900887]
 position = Vector2(0, -24)

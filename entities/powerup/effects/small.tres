@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResizePaddleEffect" format=3 uid="uid://cvah6pjkq7tcx"]
+
+[ext_resource type="Script" uid="uid://co4mjqle024v" path="res://entities/powerup/effects/resize_paddle_effect.gd" id="1_fc1kc"]
+
+[resource]
+script = ExtResource("1_fc1kc")
+shape = 2
+color = Color(1, 0, 0, 1)
+label = "S"
+metadata/_custom_type_script = "uid://co4mjqle024v"

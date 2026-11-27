@@ -5,7 +5,7 @@ extends Node2D
 const TOP_MARGIN := 50.0
 
 const POWERUP_SCENE := preload("res://entities/powerup/powerup.tscn")
-const POWERUP_RATE :float = 0.5
+const POWERUP_RATE :float = 1.0
 @export var powerup_effects :Array[PowerUpEffect]
 
 @onready var balls  :BallManager = $Balls
@@ -53,9 +53,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	var action := "launch_mouse" if Settings.move_mode == Settings.MoveMode.MOUSE else "launch_keyboard"
 	if event.is_action_pressed(action):
 		$Balls.launch_all()
-	
-	if event.is_action_pressed("add_ball"):
-		$Balls.spawn_on(paddle)
 
 func _on_deadzone_body_entered(body: Node2D) -> void:
 	if body is not Ball:
