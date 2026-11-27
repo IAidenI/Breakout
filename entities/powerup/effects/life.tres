@@ -1,9 +1,13 @@
 [gd_resource type="Resource" script_class="LifeEffect" format=3 uid="uid://bhi2o8vu06h04"]
 
+[ext_resource type="Texture2D" uid="uid://dgg7ch322nv7o" path="res://entities/powerup/powerups.png" id="1_ggxte"]
 [ext_resource type="Script" uid="uid://clwxo07hsawme" path="res://entities/powerup/effects/life_effect.gd" id="1_nws6a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qd2m"]
+atlas = ExtResource("1_ggxte")
+region = Rect2(54, 0, 16, 10)
 
 [resource]
 script = ExtResource("1_nws6a")
-color = Color(1, 0.7529412, 0.79607844, 1)
-label = "♥"
+icon = SubResource("AtlasTexture_8qd2m")
 metadata/_custom_type_script = "uid://clwxo07hsawme"

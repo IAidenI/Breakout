@@ -1,8 +1,7 @@
 class_name PowerUpEffect
 extends Resource
 
-@export var color :Color
-@export var label :String
+@export var icon :Texture2D
 
 func apply(_game: Game) -> void:
 	pass   # Chaque effet réécrit cette fonction

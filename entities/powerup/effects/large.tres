@@ -1,9 +1,13 @@
 [gd_resource type="Resource" script_class="ResizePaddleEffect" format=3 uid="uid://buqfavhytdtt6"]
 
 [ext_resource type="Script" uid="uid://co4mjqle024v" path="res://entities/powerup/effects/resize_paddle_effect.gd" id="1_fdx0c"]
+[ext_resource type="Texture2D" uid="uid://dgg7ch322nv7o" path="res://entities/powerup/powerups.png" id="1_wbs5u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cydbn"]
+atlas = ExtResource("1_wbs5u")
+region = Rect2(0, 0, 16, 10)
 
 [resource]
 script = ExtResource("1_fdx0c")
-color = Color(0, 0.5019608, 0, 1)
-label = "L"
+icon = SubResource("AtlasTexture_cydbn")
 metadata/_custom_type_script = "uid://co4mjqle024v"
