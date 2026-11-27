@@ -88,7 +88,8 @@ func _on_brick_destroyed(at: Vector2) -> void:
 
 func spawn_powerup(at: Vector2) -> void:
 	var powerup :PowerUp = POWERUP_SCENE.instantiate()
-	powerup.effect = powerup_effects.pick_random()
+	var canditates := powerup_effects.filter(func(effect: PowerUpEffect): return effect.is_available())
+	powerup.effect = canditates.pick_random()
 	powerup.global_position = at
 	powerup.collected.connect(_on_powerup_collected)
 	$PowerUps.add_child.call_deferred(powerup)

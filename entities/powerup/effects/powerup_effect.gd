@@ -5,4 +5,7 @@ extends Resource
 @export var label :String
 
 func apply(_game: Game) -> void:
-	pass   # chaque effet réécrit cette fonction
+	pass   # Chaque effet réécrit cette fonction
+
+func is_available() -> bool:
+	return true # Par défaut, un effet est toujours disponible
