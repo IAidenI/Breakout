@@ -17,8 +17,9 @@ const TYPE_DATA := {
 	Type.SQUARE: { "region": Rect2(224, 0, 32, 16), "states": 2 },
 }
 
-var max_hp :int = 0
-var hp     :int = 0
+var max_hp       :int = 0
+var hp           :int = 0
+var is_destroyed :bool = false
 
 func _ready() -> void:
 	apply_type()
@@ -42,8 +43,13 @@ static func get_size_for(t: Type) -> Vector2:
 	return Vector2(data["region"].size.x / data["states"], data["region"].size.y)
 
 func hit(damage: int) -> void:
+	if is_destroyed:
+		return
+	
 	hp -= damage
 	if hp <= 0:
+		is_destroyed = true
+		$Hitbox.set_deferred("disable", true)
 		destroyed.emit(global_position)
 		queue_free()
 	else:
